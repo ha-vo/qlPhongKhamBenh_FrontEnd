@@ -32,6 +32,16 @@
             label {
                 font-size: 15px;
             }
+
+            .custom-password {
+                position: relative;
+
+                .display-password {
+                    position: absolute;
+                    right: 3px;
+                    top: 10px;
+                }
+            }
         }
 
         .btn {

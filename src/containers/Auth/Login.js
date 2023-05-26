@@ -17,6 +17,24 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.btnLogin = React.createRef();
+
+        this.state = {
+            username: '',
+            password: '',
+            isDisplayPasswords: false
+        }
+
+        this.handleOnChangeUsername = (e) => {
+            this.setState({ username: e.target.value })
+        }
+
+        this.handleOnChangePassword = (e) => {
+            this.setState({ password: e.target.value })
+        }
+
+        this.handleDisplayPassword = (e) => {
+            this.setState({ isDisplayPasswords: !this.state.isDisplayPasswords })
+        }
     }
     render() {
         return (
@@ -27,11 +45,29 @@ class Login extends Component {
                             <div className='col-12 text-center login-title'>Login</div>
                             <div className='col-12 form-group login'>
                                 <label><b>Username:</b></label>
-                                <input className='form-control' placeholder='Enter your username' name="username" />
+                                <input
+                                    className='form-control'
+                                    placeholder='Enter your username'
+                                    name="username"
+                                    value={this.state.username}
+                                    onChange={(e) => this.handleOnChangeUsername(e)}
+                                />
                             </div>
                             <div className='col-12 form-group login'>
                                 <label><b>Password:</b></label>
-                                <input type="password" className='form-control' placeholder='Enter your password' name="password" />
+                                <div className='custom-password'>
+                                    <input
+                                        type={this.state.isDisplayPasswords ? 'text' : 'password'}
+                                        className='form-control'
+                                        placeholder='Enter your password'
+                                        name="password"
+                                        value={this.state.password}
+                                        onChange={(e) => this.handleOnChangePassword(e)}
+                                    />
+                                    <span onClick={(e) => this.handleDisplayPassword(e)} className='display-password'>
+                                        <i class={this.state.isDisplayPasswords ? "fas fa-eye" : "fas fa-eye-slash"}></i>
+                                    </span>
+                                </div>
                             </div>
                             <div className='col-12 text-center mt-4 btn'>
                                 <button className='btn-login'>Login</button>
