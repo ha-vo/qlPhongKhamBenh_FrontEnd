@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
+import handleLoginApi from '../../services/userServices';
 
 import * as actions from "../../store/actions";
 // import { KeyCodeUtils, LanguageUtils } from "../utils";
@@ -19,13 +20,14 @@ class Login extends Component {
         this.btnLogin = React.createRef();
 
         this.state = {
-            username: '',
+            email: '',
             password: '',
-            isDisplayPasswords: false
+            isDisplayPasswords: false,
+            messageError: '',
         }
 
         this.handleOnChangeUsername = (e) => {
-            this.setState({ username: e.target.value })
+            this.setState({ email: e.target.value })
         }
 
         this.handleOnChangePassword = (e) => {
@@ -34,6 +36,23 @@ class Login extends Component {
 
         this.handleDisplayPassword = (e) => {
             this.setState({ isDisplayPasswords: !this.state.isDisplayPasswords })
+        }
+
+        this.handleOnClick = async (e) => {
+            this.setState({ messageError: '' })
+            try {
+                let data = await handleLoginApi(this.state.email, this.state.password)
+                if (data && data.errno !== 0) {
+                    this.setState({ messageError: data.errMessage })
+                }
+            } catch (err) {
+                if (err.response) {
+                    if (err.response.data) {
+                        this.setState({ messageError: err.response.data.errMessage })
+                    }
+                }
+                console.log(err.response.data)
+            }
         }
     }
     render() {
@@ -44,12 +63,12 @@ class Login extends Component {
                         <div className='login-content row'>
                             <div className='col-12 text-center login-title'>Login</div>
                             <div className='col-12 form-group login'>
-                                <label><b>Username:</b></label>
+                                <label><b>email:</b></label>
                                 <input
                                     className='form-control'
-                                    placeholder='Enter your username'
-                                    name="username"
-                                    value={this.state.username}
+                                    placeholder='Enter your email'
+                                    name="email"
+                                    value={this.state.email}
                                     onChange={(e) => this.handleOnChangeUsername(e)}
                                 />
                             </div>
@@ -69,8 +88,11 @@ class Login extends Component {
                                     </span>
                                 </div>
                             </div>
+                            <div className='col-12 text-danger'>
+                                {this.state.messageError}
+                            </div>
                             <div className='col-12 text-center mt-4 btn'>
-                                <button className='btn-login'>Login</button>
+                                <button className='btn-login' onClick={(e) => this.handleOnClick(e)}>Login</button>
                             </div>
                             <div className='col-12 mt-3 '>
                                 <span>Forgot your password?</span>
