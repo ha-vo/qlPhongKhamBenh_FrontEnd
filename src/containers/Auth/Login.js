@@ -54,7 +54,6 @@ class Login extends Component {
                         this.setState({ messageError: err.response.data.errMessage })
                     }
                 }
-                console.log(err.response.data)
             }
         }
     }
