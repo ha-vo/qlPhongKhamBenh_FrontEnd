@@ -65,7 +65,7 @@ class Login extends Component {
                         <div className='login-content row'>
                             <div className='col-12 text-center login-title'>Login</div>
                             <div className='col-12 form-group login'>
-                                <label><b>email:</b></label>
+                                <label><b>Email:</b></label>
                                 <input
                                     className='form-control'
                                     placeholder='Enter your email'

@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomePage.scss'
 
-class HomePage extends Component {
+class HomeHeader extends Component {
 
     render() {
         return (
@@ -14,7 +14,7 @@ class HomePage extends Component {
                             <i class="fa fa-bars" aria-hidden="true"></i>
                         </div>
                         <div className='logo'>
-
+                            <i class="fa fa-heartbeat" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div className='center-content'>
@@ -60,4 +60,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
