@@ -1,4 +1,24 @@
 {
+    "homeHeader": {
+        "title1": "Specialist",
+        "title2": "Health facilities",
+        "title3": "Doctor",
+        "title4": "Checkup package",
+        "description1": "Find a doctor by specialty",
+        "description2": "Choose hospital clinic",
+        "description3": "Choose a good doctor",
+        "description4": "General health check",
+        "support": "Help"
+    },
+    "homeBanner": {
+        "title1": "MEDICAL BACKGROUND",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "option1": "Specialized examination",
+        "option2": "Remote examination",
+        "option3": "General examination",
+        "option4": "Medical test",
+        "option5": "Dental examination"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

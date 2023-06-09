@@ -1,7 +1,7 @@
 .home-header-container {
-    height: 90px;
+    height: 80px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 0 20px;
 
     .home-header-content {
         display: flex;
@@ -20,11 +20,19 @@
                 i {
                     font-size: 70px;
                 }
+
+                .bck {
+                    font-family: cursive;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-style: italic;
+                }
             }
         }
 
         .center-content {
-            width: 70%;
+            padding: 15px 20px;
+            width: 60%;
             display: flex;
             text-align: center;
 
@@ -34,15 +42,35 @@
         }
 
         .right-content {
-            width: 10%;
+            width: 20%;
             text-align: center;
             margin: auto;
             padding: 0 4px;
+            display: flex;
+            justify-content: flex-end;
+
+            i {
+                margin: 5px 10px;
+            }
+
+            .language-vi {
+                margin: 0 20px;
+
+                &.active {
+                    color: #45c3d2;
+                }
+            }
+
+            .language-en {
+                &.active {
+                    color: #45c3d2;
+                }
+            }
+
+
         }
 
-        .language {
-            padding: 0 4px;
-        }
+
     }
 
 
@@ -62,6 +90,8 @@
         text-align: center;
         padding-top: 20px;
         min-width: 768px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
+        height: 50%;
 
         .text1 {
             font-size: 32px;
@@ -79,7 +109,7 @@
             justify-content: center;
             background-color: #f7d800;
             width: fit-content;
-            margin: 10px auto;
+            margin: 20px auto;
             padding: 15px;
             border-radius: 30px;
             border: 1px solid transparent;
@@ -89,6 +119,7 @@
             }
 
             input {
+
                 width: 400px;
                 border: none;
                 height: 20px;
@@ -100,13 +131,17 @@
     }
 
     .contain-second {
-
         display: flex;
         justify-content: space-around;
-        margin: auto 0px;
+        align-items: flex-end;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+        height: 50%;
+        margin-bottom: 70px;
 
         .option {
             width: 110px;
+            height: 100px;
+            margin-bottom: 20px;
 
             .icon {
                 background-color: #fff;
@@ -118,7 +153,6 @@
                 margin: auto;
 
                 i {
-
                     font-size: 20px;
                     color: #45c3d2;
                 }

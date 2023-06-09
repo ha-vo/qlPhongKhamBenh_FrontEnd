@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomePage.scss'
+import { FormattedMessage } from 'react-intl';
 
 class HomeHeader extends Component {
 
@@ -15,32 +16,35 @@ class HomeHeader extends Component {
                         </div>
                         <div className='logo'>
                             <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                            <span className="bck">BCK</span>
                         </div>
                     </div>
                     <div className='center-content'>
                         <div className='child-content'>
-                            <div><b>Chuyên khoa</b></div>
-                            <div>Tìm bác sĩ theo chuyên khoa</div>
+                            <div><b><FormattedMessage id="homeHeader.title1" /></b></div>
+                            <div><FormattedMessage id="homeHeader.description1" /></div>
                         </div>
                         <div className='child-content'>
-                            <div><b>Cơ sở y tế</b></div>
-                            <div>Chọn bệnh viện phòng khám</div>
+                            <div><b><FormattedMessage id="homeHeader.title2" /></b></div>
+                            <div><FormattedMessage id="homeHeader.description2" /></div>
                         </div>
                         <div className='child-content'>
-                            <div><b>Bác sĩ</b></div>
-                            <div>Chọn bác sĩ giỏi</div>
+                            <div><b><FormattedMessage id="homeHeader.title3" /></b></div>
+                            <div><FormattedMessage id="homeHeader.description3" /></div>
                         </div>
                         <div className='child-content'>
-                            <div><b>Gói khám</b></div>
-                            <div>Khám sức khoẻ tổng quát</div>
+                            <div><b><FormattedMessage id="homeHeader.title4" /></b></div>
+                            <div><FormattedMessage id="homeHeader.description4" /></div>
                         </div>
 
 
                     </div>
                     <div className='right-content'>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        Help
-                        <span className='language'>VN</span>
+                        <FormattedMessage id="homeHeader.support" />
+                        <div className='language-vi'>VI</div>
+                        <div className="language-en">EN</div>
+
                     </div>
                 </div>
             </div >
