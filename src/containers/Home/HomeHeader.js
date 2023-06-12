@@ -3,10 +3,17 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomePage.scss'
 import { FormattedMessage } from 'react-intl';
+import { languages } from '../../utils/constant';
+import { changeLanguage } from '../../store/actions/appActions';
+
 
 class HomeHeader extends Component {
 
+    changeLanguageFunc = (language) => {
+        this.props.changeLanguageApp(language)
+    }
     render() {
+        let lang = this.props.language
         return (
             <div className='home-header-container'>
                 <div className='home-header-content'>
@@ -42,8 +49,8 @@ class HomeHeader extends Component {
                     <div className='right-content'>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
                         <FormattedMessage id="homeHeader.support" />
-                        <div className='language-vi'>VI</div>
-                        <div className="language-en">EN</div>
+                        <div className={lang === languages.VI ? 'language-vi active' : 'language-vi'}><span onClick={() => this.changeLanguageFunc(languages.VI)}>VI</span></div>
+                        <div className={lang === languages.EN ? 'language-en active' : 'language-en'}><span onClick={() => this.changeLanguageFunc(languages.EN)}>EN</span></div>
 
                     </div>
                 </div>
@@ -55,12 +62,14 @@ class HomeHeader extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        language: state.app.language
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageApp: (language) => dispatch(changeLanguage(language))
     };
 };
 
