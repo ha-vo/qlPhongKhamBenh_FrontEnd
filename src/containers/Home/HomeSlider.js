@@ -13,30 +13,50 @@ class HomeSlider extends Component {
             dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1
         };
         return (
-            <Slider {...settings}>
-                <div>
-                    <h3>1</h3>
+            <div className='slider-contain'>
+                <div className='slider-content'>
+                    <div className='slider-header'>
+                        <div className='title-slider'>
+                            Chuyên Khoa Phổ Biến
+                        </div>
+                        <div className='more'>
+                            <button >XEM THÊM</button>
+                        </div>
+
+                    </div>
+                    <Slider {...settings}>
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 1</div>
+                        </div>
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 2</div>
+                        </div>
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 3</div>
+                        </div>
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 4</div>
+                        </div>
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 5</div>
+                        </div >
+                        <div className='slide'>
+                            <div className='slide-img'></div>
+                            <div className='slide-des'>mô tả 6</div>
+                        </div>
+                    </Slider>
                 </div>
-                <div>
-                    <h3>2</h3>
-                </div>
-                <div>
-                    <h3>3</h3>
-                </div>
-                <div>
-                    <h3>4</h3>
-                </div>
-                <div>
-                    <h3>5</h3>
-                </div>
-                <div>
-                    <h3>6</h3>
-                </div>
-            </Slider>
+            </div>
+
         );
     }
 }
