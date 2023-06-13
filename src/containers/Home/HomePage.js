@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import HomeBanner from './HomeBanner';
+import HomeSlider from './HomeSlider';
 
 class HomePage extends Component {
 
@@ -11,6 +12,7 @@ class HomePage extends Component {
             <>
                 <HomeHeader />
                 <HomeBanner />
+                <HomeSlider />
             </>
         )
     }
