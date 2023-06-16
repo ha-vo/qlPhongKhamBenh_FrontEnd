@@ -3,8 +3,9 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import HomeBanner from './HomeBanner';
-import Specialist from './Specialist';
-import Facilities from './Facilities';
+import Specialist from './slider/Specialist';
+import Facilities from './slider/Facilities';
+import Doctor from './slider/Doctor';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,6 +26,7 @@ class HomePage extends Component {
                 <HomeBanner />
                 <Specialist settings={settings} />
                 <Facilities settings={settings} />
+                <Doctor settings={settings} />
             </>
         )
     }

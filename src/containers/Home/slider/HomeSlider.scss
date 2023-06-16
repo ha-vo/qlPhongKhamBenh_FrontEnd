@@ -1,5 +1,5 @@
 .slider-content {
-    height: 300px;
+    height: 100%;
     padding: 10px 70px;
 
 
@@ -34,7 +34,7 @@
         height: 200px;
 
         .specialist-img {
-            background: url('../../assets/specialty/co-xuong-khop.jpg');
+            background: url('../../../assets/specialty/co-xuong-khop.jpg');
             width: 278px;
             height: 150px;
         }
@@ -45,13 +45,30 @@
         height: 200px;
 
         .facilities-img {
-            background: url('../../assets/facilities/lo-go-viet-duc.jpg');
+            background: url('../../../assets/facilities/lo-go-viet-duc.jpg');
             width: 278px;
             height: 150px;
             border: 1px solid #ebe1e1;
         }
 
         .facilities-des {}
+    }
+
+    .doctor {
+        width: 278px !important;
+        height: 250px;
+        background: white;
+        padding-top: 10px;
+        text-align: center;
+
+        .doctor-img {
+            background: url('../../../assets/doctor/doctor-check.jpg') center center no-repeat;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
     }
 
     .slick-prev {
