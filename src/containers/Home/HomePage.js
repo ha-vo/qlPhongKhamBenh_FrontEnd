@@ -3,16 +3,28 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import HomeBanner from './HomeBanner';
-import HomeSlider from './HomeSlider';
+import Specialist from './Specialist';
+import Facilities from './Facilities';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class HomePage extends Component {
 
     render() {
+        let settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        };
         return (
             <>
                 <HomeHeader />
                 <HomeBanner />
-                <HomeSlider />
+                <Specialist settings={settings} />
+                <Facilities settings={settings} />
             </>
         )
     }
