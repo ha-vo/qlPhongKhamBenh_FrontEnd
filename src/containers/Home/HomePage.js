@@ -8,6 +8,7 @@ import Facilities from './slider/Facilities';
 import Doctor from './slider/Doctor';
 import HandBook from './slider/HandBook';
 import Introduction from './Introduction'
+import Footer from './Footer';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -31,6 +32,7 @@ class HomePage extends Component {
                 <Doctor settings={settings} />
                 <HandBook settings={settings} />
                 <Introduction settings={settings} />
+                <Footer />
             </>
         )
     }
