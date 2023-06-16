@@ -6,6 +6,7 @@ import HomeBanner from './HomeBanner';
 import Specialist from './slider/Specialist';
 import Facilities from './slider/Facilities';
 import Doctor from './slider/Doctor';
+import HandBook from './slider/HandBook';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,6 +28,7 @@ class HomePage extends Component {
                 <Specialist settings={settings} />
                 <Facilities settings={settings} />
                 <Doctor settings={settings} />
+                <HandBook settings={settings} />
             </>
         )
     }
