@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
-import handleLoginApi from '../../services/userServices';
+import userServices from '../../services/userServices';
 
 import * as actions from "../../store/actions";
 // import { KeyCodeUtils, LanguageUtils } from "../utils";
@@ -41,7 +41,7 @@ class Login extends Component {
         this.handleOnClick = async (e) => {
             this.setState({ messageError: '' })
             try {
-                let data = await handleLoginApi(this.state.email, this.state.password)
+                let data = await userServices.handleLoginApi(this.state.email, this.state.password)
                 if (data && data.errno !== 0) {
                     this.setState({ messageError: data.errMessage })
                 }
